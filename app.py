@@ -35,7 +35,18 @@ def get_youtube_summary(VIDEO_URL):
         return None
 
     try:
-        srt = YouTubeTranscriptApi.get_transcript(video_id, languages=['en', 'hi'])
+        srt = YouTubeTranscriptApi.get_transcript(video_id, languages=languages = [
+    'en', 'af', 'sq', 'am', 'ar', 'hy', 'az', 'eu', 'be', 'bn', 'bs', 'bg', 'ca', 'ceb',
+    'ny', 'zh-cn', 'zh-tw', 'co', 'hr', 'cs', 'da', 'nl', 'eo', 'et', 'tl', 'fi',
+    'fr', 'fy', 'gl', 'ka', 'de', 'el', 'gu', 'ht', 'ha', 'haw', 'he', 'iw', 'hi',
+    'hmn', 'hu', 'is', 'ig', 'id', 'ga', 'it', 'ja', 'jv', 'kn', 'kk', 'km', 'rw',
+    'ko', 'ku', 'ky', 'lo', 'la', 'lv', 'lt', 'lb', 'mk', 'mg', 'ms', 'ml', 'mt',
+    'mi', 'mr', 'mn', 'my', 'ne', 'no', 'or', 'ps', 'fa', 'pl', 'pt', 'pa', 'ro',
+    'ru', 'sm', 'gd', 'sr', 'st', 'sn', 'sd', 'si', 'sk', 'sl', 'so', 'es', 'su',
+    'sw', 'sv', 'tg', 'ta', 'tt', 'te', 'th', 'tr', 'tk', 'uk', 'ur', 'ug', 'uz',
+    'vi', 'cy', 'xh', 'yi', 'yo', 'zu'
+]
+)
     except TranscriptsDisabled:
         print("Transcripts are disabled for this video.")
         return None
