@@ -54,10 +54,6 @@ We are continuously exploring new possibilities for Summ-e5. If you have additio
 - Sayantan Mukherjee
 - Rajat Masanagi
 
-## Installation 🚚
-
-No installation required! Summ-e5 is a web-based platform, making it accessible from any device with an internet connection.
-
 ## Contributing 🤝
 
 We welcome contributions from the community. If you have ideas for improvements or new features, feel free to open an issue or submit a pull request.
