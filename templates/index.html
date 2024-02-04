@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube URL Processor</title>
+    <style>
+        *{
+            padding:0px;
+            margin:0px;
+            overflow-x:hidden ;
+        }
+        @font-face {
+        font-family: 'CustomFont';
+        src: url('{{ url_for('static', filename='fonts/Chomiku3D-Regular.ttf') }}') format('truetype'); /* Specify 'truetype' for TTF fonts */
+        font-weight: normal;
+        font-style: normal;
+}
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+            width:100vw;
+            background-image: url('{{ url_for('static', filename='images/bbg.jpg') }}');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            z-index: -1;
+        }
+        #white{
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            width:40vw;
+            border-radius: 15px;
+            box-shadow: 10px 10px;
+            z-index: 2;
+        }
+        #summary{
+            margin-top: 20px;
+        }
+        #text{
+            margin-top: 20px;
+            width:20vw;
+            padding:10px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        #thumbnail{
+            margin-top:20px;
+            width:40vw;
+            border-radius: 5px;
+        }
+        #btn{
+            width:7.5vw;
+            padding:10px;
+            background-color: #c7142f;
+            color:white;
+            border: 2px solid #c7142f;
+            border-radius: 5px;
+        }
+        #btn:hover{
+            opacity:.8;
+        }
+        h1{
+            font-family:'CustomFont';
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="bgimg">
+        
+        <div id="white">
+            
+            <h1>YouTube Video Summarizer</h1>
+            <form method="post">
+                <input type="text" name="youtube_url" placeholder="Enter YouTube URL" id="text" required>
+                <button type="submit" id="btn">Submit</button>
+            </form>
+            
+            {% if image_url and result_text %}
+            <img src="{{ image_url }}" alt="Image" id="thumbnail">
+            <h4 style="margin-top: 20px;">Summary</h4>
+            <p id="summary">{{ result_text }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
